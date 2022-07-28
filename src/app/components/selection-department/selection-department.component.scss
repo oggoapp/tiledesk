@@ -9,6 +9,8 @@
     .c21-button-department{
         width: 100%;
         text-align: left;
+        display: flex;
+        gap: 12px;
     }
     .c21-header {
         overflow: hidden;
@@ -71,8 +73,18 @@
         .c21-body-content  {
             padding: 0px 0px 40px 0px;
             position: relative;
-            
+            width: 100%;
+
         }
+    }
+
+    .c21-body-container {
+      display: flex;
+      flex-direction: column;
+      padding-top: 100px;
+      padding-left: 16px;
+      padding-right: 16px;
+      gap: 10px;
     }
 }
 
@@ -83,22 +95,35 @@
     padding: 0;
     height: auto;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     /* width: 15em; */
 }
 .chat21-content-modal-select > li {
     cursor: pointer;
     position: relative;
-    margin: 7px 14px;//15px 0;
-    padding: 7px 4px; //4px 20px;
+    margin: 0;//15px 0;
+    padding: 20px 16px; //4px 20px;
     font-size: 1.4em;
     text-align: left;
     color: $black;
     line-height: normal;
     display: block;
+    border-radius: 10px;
+    border: 1px solid #465AE9;
 }
 .chat21-content-modal-select > li:hover {
-    background-color: $trasp-light-gray;
-    border-radius: 10px;
+    background-color: #465AE9;
+
+    .chat21-name-list {
+      color: #ffffff !important;
+    }
+
+    .chat21-badge {
+      background-color: #ffffff !important;
+      color: #000000 !important;
+    }
 }
 .chat21-content-modal-select li.selected:hover {
     /* background-color: #BBD8DC !important;
@@ -111,21 +136,26 @@
 .chat21-content-modal-select .chat21-badge {
     -webkit-box-sizing: initial;
     box-sizing: initial;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 12px;
     padding: 0px;
     line-height: 24px;
     height: 24px;
     width: 24px;
     border-radius: 50%;
-    margin: 0 10px 0 0;
+    margin: 0;
     text-align: center;
     font-weight: 500;
+    background-color: #465AE9 !important;
+    color: #ffffff !important;
 }
 .chat21-content-modal-select .chat21-name-list {
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 24px;
+    color: #7D87A4;
 }
 
 .chat21-content-modal-select .chat21-title{

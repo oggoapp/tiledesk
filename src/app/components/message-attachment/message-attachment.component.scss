@@ -1,10 +1,11 @@
 #buttons-in-message {
     text-align: right;
-    display: block; 
+    display: block;
     margin-top: -6px;
     margin-bottom: 5px;
     margin-right: 16px; //align attachment-buttons to bubble sent message
     height: auto;
+    padding-bottom: 10px;
 
 
     .div-button {
@@ -14,26 +15,26 @@
         }
     }
 
-    
-    
-    
+
+
+
     // .button-success {
-    //     background-color: white; 
+    //     background-color: white;
     //     color: #333333;
     //     border: 1px solid rgb(28, 184, 65);
     // }
     // .button-error {
-    //     background-color: white; 
+    //     background-color: white;
     //     color: #333333;
     //     border: 1px solid rgb(202, 60, 60);
     // }
     // .button-warning {
-    //     background-color: white; 
+    //     background-color: white;
     //     color: #333333;
     //     border: 1px solid rgb(223, 117, 20);
     // }
     // .button-secondary {
-    //     background-color: white; 
+    //     background-color: white;
     //     color: #333333;
     //     border: 1px solid rgb(66, 184, 221);
     // }
@@ -52,7 +53,7 @@
     // .button-secondary:hover {
     //     color: white;
     //     background: rgb(66, 184, 221);
-    // } 
+    // }
 }
 
 
@@ -61,8 +62,8 @@
     max-width: 300px;
     min-width: inherit;
     cursor: pointer;
-    border: 1px solid rgb(42, 106, 193);
-    border-radius: 20px;
+    border: 1px solid #1B384F;
+    border-radius: 12px;
     margin: 3px;
     background: transparent;
     overflow: hidden;
@@ -81,14 +82,15 @@
     //     background:  rgb(42, 106, 193);
     // }
 
-    
+
     &.text {
         // color: rgb(42, 106, 193);
         transition: background-color .6s ease;
         &:focus,
         &:hover {
             color: white;
-            background:  rgb(42, 106, 193);
+            background:  #4556f2;
+            border: 1px solid #4556f2;
             .icon-button-action {
                 svg {
                     fill: rgb(255,255,255);
@@ -123,7 +125,8 @@
         &:focus,
         &:hover {
             color: white;
-            background:  rgb(42, 106, 193);
+            background:  #4556f2;
+            border: 1px solid #4556f2;
             .icon-button-action {
                 svg {
                     fill: rgb(255,255,255);
@@ -148,9 +151,9 @@
                 width: 200px;
                 height: 200px;
             }
-            
+
         }
-        
+
         // &:focus{
         //     color: white;
         //     background:  rgb(42, 106, 193);

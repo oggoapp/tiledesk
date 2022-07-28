@@ -1,17 +1,22 @@
 @import '../../../../sass/variables';
 
 .message_innerhtml {
+    font-size: 1.6em !important;
     margin: 0px;
     // padding: 0px 14px;
     &.marked{
-        padding:8px;
+        padding:0;
         margin-block-start: -1em!important;
         margin-block-end: -1em!important;
     }
-    
+
     .text-message {
         padding-top: 14px;
     }
+}
+
+.msg_sent .message_innerhtml {
+  color: #ffffff !important;
 }
 
 p {

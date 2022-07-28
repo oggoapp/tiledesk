@@ -39,19 +39,23 @@
   </form>
 
   <!-- [disabled]="!preChatFormGroupCustom?.valid" -->
-  <button [tabindex]="lastTabIndex"  class="c21-button-primary" 
+  <button [tabindex]="lastTabIndex"  class="c21-button-primary"
     (click)="onSubmitPreChatForm()"
     (keydown.enter)="onEnterButtonPressed($event)"
     [ngStyle]="{'background-color': stylesMap?.get('themeColor'), 'border-color': stylesMap?.get('themeColor'), 'color': stylesMap?.get('foregroundColor') }">
     <span class="v-align-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"  [ngStyle]="{'fill': stylesMap?.get('foregroundColor')}"/>
-        <path d="M0 0h24v24H0z" fill="none"/>
-        </svg>
+      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <mask id="mask0_37232_299" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="2" y="3" width="20" height="20">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 3.0004H21.999V22.4994H2.5V3.0004Z" fill="white"/>
+        </mask>
+        <g mask="url(#mask0_37232_299)">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3049 14.8178L14.9619 20.7508C15.1219 21.0108 15.3719 21.0078 15.4729 20.9938C15.5739 20.9798 15.8169 20.9178 15.9049 20.6228L20.4779 5.1778C20.5579 4.9048 20.4109 4.7188 20.3449 4.6528C20.2809 4.5868 20.0979 4.4458 19.8329 4.5208L4.37688 9.0468C4.08388 9.1328 4.01988 9.3788 4.00588 9.4798C3.99188 9.5828 3.98788 9.8378 4.24688 10.0008L10.2479 13.7538L15.5499 8.3958C15.8409 8.1018 16.3159 8.0988 16.6109 8.3898C16.9059 8.6808 16.9079 9.1568 16.6169 9.4508L11.3049 14.8178ZM15.3949 22.4998C14.6989 22.4998 14.0609 22.1458 13.6849 21.5378L9.80788 15.2468L3.45188 11.2718C2.76688 10.8428 2.40888 10.0788 2.51988 9.2758C2.62988 8.4728 3.18088 7.8348 3.95488 7.6078L19.4109 3.0818C20.1219 2.8738 20.8839 3.0708 21.4079 3.5928C21.9319 4.1198 22.1269 4.8898 21.9149 5.6038L17.3419 21.0478C17.1129 21.8248 16.4729 22.3738 15.6719 22.4808C15.5779 22.4928 15.4869 22.4998 15.3949 22.4998Z" fill="white"/>
+        </g>
+      </svg>
     </span>
     <span class="v-align-center c21-label-button">
       {{translationMap?.get('LABEL_START_NW_CONV')}}
-    </span>  
+    </span>
     <div class="clear"></div>
   </button>
 </div>

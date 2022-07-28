@@ -16,8 +16,8 @@
         padding: 0;
         margin: 0;
         line-height: 1.2em;
-        color: #616161;
-        font-size: 1.5em;
+        color: #000000;
+        font-size: 1.6em;
         text-align: center;
         word-wrap: break-word;
     }
@@ -34,7 +34,7 @@ input[type="checkbox"] {
     -webkit-border-radius:3px;
     -webkit-appearance: none;
     -webkit-transition: box-shadow 200ms;
-  
+
 }
 
 
@@ -62,7 +62,7 @@ input[type="checkbox"]:active:not(:disabled) {
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
     outline:none;
-  
+
 }
 
 // /* input checked border color */

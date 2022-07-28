@@ -1,0 +1,209 @@
+version: "3.7"
+
+volumes:
+  tiledesk-datadb:
+services:
+  dashboard:
+    image: tiledesk/tiledesk-dashboard:2.2.43.3
+    container_name: tiledesk-dashboard
+    environment:
+      - FEATURES_TOKEN=NAT:T-DEV:T-TRI:T-GRO:T-DEP:T-OPH:T-MTL:T-CAR:T-LBS:T-NOT:T-MTT:T-RAS:T-ANA:T-ACT:T
+      - SERVER_BASE_URL=/api/
+      - CHAT_BASE_URL=/chat/
+      - WS_URL
+      - WS_URL_RELATIVE=/ws/
+      - "WIDGET_LOCATION=${EXTERNAL_BASE_URL}/widget/launch.js"
+      - WIDGET_TEST_LOCATION=/widget/assets/twp/index.html
+      - CHAT21_ENGINE=mqtt
+      - UPLOAD_ENGINE=native
+      - PUSH_ENGINE=none
+      - FIREBASE_APIKEY
+      - FIREBASE_AUTHDOMAIN
+      - FIREBASE_DATABASEURL
+      - FIREBASE_PROJECT_ID
+      - FIREBASE_STORAGEBUCKET
+      - FIREBASE_MESSAGINGSENDERID
+      - FIREBASE_APP_ID
+      - FIREBASE_VAPID
+      - RASA_BOT_CREDENTIAL_URL=/api/modules/rasa/botcredendials/
+      - LOG_LEVEL=info
+
+    ports:
+      - "4500:80" #use expose if you want to block external access
+
+  webwidget:
+    image: chat21:4
+    container_name: chat21-web-widget
+    ports:
+      - "4200:80" # specify port forewarding
+    environment:
+      - CHAT21_ENGINE=mqtt
+      - MQTT_APPID=tilechat
+      - PUSH_ENGINE=none
+      - LOG_LEVEL=info
+      - FILE_UPLOAD_ACCEPT=*/*
+      - "MQTT_ENDPOINT=${EXTERNAL_MQTT_BASE_URL}/mqws/ws"
+      - "MQTT_APIENDPOINT=${EXTERNAL_BASE_URL}/chatapi/api"
+      #- MQTT_LOGINSERVICE_ENDPOINT=/api/chat21/native/auth/createCustomToken
+      - FIREBASE_APIKEY
+      - FIREBASE_AUTHDOMAIN
+      - FIREBASE_DATABASEURL
+      - FIREBASE_PROJECT_ID
+      - FIREBASE_STORAGEBUCKET
+      - FIREBASE_MESSAGINGSENDERID
+      - FIREBASE_TENANT=tilechat
+      - UPLOAD_ENGINE=native
+      - "API_URL=${EXTERNAL_BASE_URL}/api/"
+      - "TRANSLATIONS_URL=${EXTERNAL_BASE_URL}/api/"
+      #- API_BASEIMAGE_URL=https://firebasestorage.googleapis.com/v0/b/    For firebase
+      - "API_BASEIMAGE_URL=${EXTERNAL_BASE_URL}/api/"
+      - AUTH_PERSISTENCE=LOCAL
+
+  ionic:
+    image: chat21/chat21-ionic:3.0.69
+    container_name: chat21-ionic
+    ports:
+      - "8082:80" #use expose if you want to block external access
+    environment:
+      - DASHBOARD_URL=/dashboard/
+      - API_BASEIMAGE_URL=/api/
+      - API_URL=/api/
+      - FEATURES_TOKEN=NAT:T-DEV:T-TRI:T-GRO:T-DEP:T-OPH:T-MTL:T-CAR:T-LBS:T-NOT:T-MTT:T-RAS:T-ANA:T-ACT:T
+      - PUSH_ENGINE=none
+      - LOG_LEVEL=info
+      - FILE_UPLOAD_ACCEPT=*/*
+      - CHAT21_ENGINE=mqtt
+      - MQTT_APPID=tilechat
+      - "MQTT_ENDPOINT=${EXTERNAL_MQTT_BASE_URL}/mqws/ws"
+      - MQTT_APIENDPOINT=/chatapi/api
+      #- MQTT_LOGINSERVICE_ENDPOINT=/api/chat21/native/auth/createCustomToken
+      - UPLOAD_ENGINE=native
+      - FIREBASE_APIKEY
+      - FIREBASE_AUTHDOMAIN
+      - FIREBASE_DATABASEURL
+      - FIREBASE_PROJECT_ID
+      - FIREBASE_STORAGEBUCKET
+      - FIREBASE_MESSAGINGSENDERID
+      - FIREBASE_TENANT=tilechat
+      - FIREBASE_VAPID
+      - SUPPORT_MODE=true
+      - WRITE_TO_BUTTON=true
+      - ARCHIVED_BUTTON=true
+      - AUTH_PERSISTENCE=LOCAL
+      - WS_URL_RELATIVE=/ws/
+  proxy:
+    image: tiledesk/tiledesk-docker-proxy:v1.1.0
+    container_name: tiledesk-docker-proxy
+    ports:
+      - "8081:80" # specify port forewarding
+    depends_on:
+      - server
+      - dashboard
+      - webwidget
+      - chat21httpserver
+      - rabbitmq
+    command: [nginx-debug, "-g", "daemon off;"]
+
+  server:
+    image: tiledesk/tiledesk-server:2.3.1
+    container_name: tiledesk-server
+    restart: always
+    environment:
+      - LOG_LEVEL=verbose
+      - CHAT21_ENABLED=true
+      - CHAT21_ENGINE=mqtt
+      - CHAT21_URL=http://chat21httpserver:8004
+      - CHAT21_JWT_SECRET=${JWT_KEY}
+      - CHAT21_APPID=tilechat
+      - RESTHOOK_ENABLED=true
+      - CHAT21_ADMIN_TOKEN=${CHAT21_ADMIN_TOKEN}
+      - MONGODB_URI=mongodb://mongo/tiledesk
+      - EMAIL_ENABLED=true
+      - EMAIL_HOST=${EMAIL_HOST}
+      - EMAIL_USERNAME=${EMAIL_USERNAME}
+      - EMAIL_SECURE=true
+      - EMAIL_PORT=${EMAIL_PORT}
+      - EMAIL_PASSWORD=${EMAIL_PASSWORD}
+      - EMAIL_FROM_ADDRESS=${EMAIL_FROM_ADDRESS}
+      - "EMAIL_BASEURL=${EXTERNAL_BASE_URL}/dashboard"
+      - "WEBHOOK_ORIGIN=${EXTERNAL_BASE_URL}/api/"
+      - "WIDGET_LOCATION=${EXTERNAL_BASE_URL}/widget/launch.js"
+      - "WIDGET_TEST_LOCATION=${EXTERNAL_BASE_URL}/widget/assets/test_widget_page/index.html"
+      - WS_SERVER_PATH
+      - LICENSE_KEY
+    depends_on:
+      - mongo
+    ports:
+      - "3000:3000"
+
+  chat21httpserver:
+    image: chat21/chat21-http-server:0.2.9
+    container_name: chat21httpserver
+    restart: always
+    environment:
+      - LOG_LEVEL=info
+      #- AUTO_RESTART=false
+      - MONGODB_URI=mongodb://mongo/chat21
+      - JWT_KEY=${JWT_KEY}
+      - RABBITMQ_URI=${HTTP_RABBITMQ_URI}
+      - PUSH_ENABLED=true
+      - FIREBASE_PRIVATE_KEY
+      - FIREBASE_APIKEY
+      - FIREBASE_PROJECT_ID
+      - FIREBASE_CLIENT_EMAIL
+      - PUSH_WH_CHAT21_API_ADMIN_TOKEN=${PUSH_WH_CHAT21_API_ADMIN_TOKEN}
+      - PUSH_WH_NOTIFY_URL=http://localhost:8004/api/tilechat/notify
+      - PUSH_WH_WEBHOOK_TOKEN=${PUSH_WH_WEBHOOK_TOKEN}
+    depends_on:
+      - mongo
+      - rabbitmq
+    ports:
+      - "8004:8004"
+
+  chat21server:
+    image: chat21/chat21-server:0.2.11
+    container_name: chat21server
+    restart: always
+    environment:
+      #- AUTO_RESTART=false
+      - LOG_LEVEL=info
+      - MONGODB_URI=mongodb://mongo/chat21
+      - APP_ID=tilechat
+      - WEBHOOK_ENDPOINTS=http://server:3000/chat21/requests,http://chat21httpserver:8004/api/tilechat/push/webhook/endpoint/${PUSH_WH_WEBHOOK_TOKEN}
+      - WEBHOOK_ENABLED=true
+      - WEBHOOK_EVENTS=message-sent
+      - RABBITMQ_URI=${RABBITMQ_URI}
+    depends_on:
+      - mongo
+      - rabbitmq
+      - server
+  rabbitmq:
+    image: chat21/chat21-rabbitmq
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_ERLANG_COOKIE: ${RABBITMQ_ERLANG_COOKIE}
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+    ports:
+      - 5672:5672
+      - 15672:15672
+      - 1883:1883
+      - 15675:15675
+    # healthcheck:
+    #     test: [ "CMD", "nc", "-z", "localhost", "5672" ]
+    #     interval: 5s
+    #     timeout: 15s
+    #     retries: 1
+  mongo:
+    container_name: mongo
+    image: mongo:4.0.23
+    command: --bind_ip_all
+    volumes:
+      - tiledesk-datadb:/data/db
+
+  #ngrok:
+  #  container_name: ngrok
+  #  image: wernight/ngrok
+  #  command: ngrok http server:3000
+  #  ports:
+  #   -  '4040:4040'

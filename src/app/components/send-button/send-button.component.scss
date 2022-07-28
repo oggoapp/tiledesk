@@ -1,3 +1,5 @@
+@import '../../../sass/_variables.scss';
+
 #c21-launcher-button {
     // border-radius: 50%; //--> now retrived from settings
     position: fixed;
@@ -11,11 +13,15 @@
     box-shadow: rgba(0, 18, 46, 0.16) 0px 0px 16px 0px; /* NEW GAB */
 
     .launcher-button{
-        width:100%; 
-        height:100%; 
-        padding:0px; 
+        width:100%;
+        height:100%;
+        padding:0px;
         margin: 0px;
         display: flex;
+        border-radius: 50%;
+        background-color: $button-bg-color;
+        align-items: center;
+        justify-content: center;
     }
 }
 .c21-divBudge {
@@ -45,6 +51,6 @@
         &.c21-align-left {
             left: 0;
         }
-        
-    } 
+
+    }
 }

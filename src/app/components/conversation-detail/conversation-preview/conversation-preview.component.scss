@@ -3,13 +3,13 @@
 
 :host .c21-content ::ng-deep > chat-image  {
 
-    div { 
-        margin: 2px auto !important;
+    div {
+        margin: 8px auto !important;
 
         // img {
         //     height: 98%;
         // }
-    }  
+    }
 }
 
 #c21-preview{
@@ -30,7 +30,7 @@
     z-index: 25;
 
     .modal-preview-image {
-        
+
         width: auto;
         height: auto;
         min-height: var( --modal-height);
@@ -40,14 +40,14 @@
         font-size: 1.2em;
         line-height: normal;
         overflow: hidden;
-        border: 1px solid #d7d7d7;  
-        background-color: #ffffff; 
+        background-color: #ffffff;
         z-index: 25;
         margin: auto;
         margin-top: var(--margin-top);
-        
+        border-radius: 10px;
+
     }
-    
+
     .c21-header{
         height: calc(2px + var(--header-height));
         position: fixed;
@@ -71,12 +71,12 @@
                     height: 40px;
                     padding: 0px;
                     margin: 0px 10px;
-                    font-size: 1.0em;
-                    font-weight: 500;
+                    font-size: 2em;
+                    font-weight: 700;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
-        
+
                     .titleText {
                         position: relative;
                         line-height: 40px;
@@ -92,7 +92,7 @@
             }
         }
 
-        
+
     }
 
 
@@ -110,7 +110,7 @@
         //     width: auto;
         //     height: auto;
         //     object-fit: cover;
-            
+
         // }
         #c21-contentScroll-preview{
             position: absolute;
@@ -135,7 +135,7 @@
         }
         #scroll-me-preview:hover {
             &::-webkit-scrollbar-thumb {
-                background: #777777; 
+                background: #777777;
             }
         }
 
@@ -161,9 +161,14 @@
         position: fixed;
         top: calc( var(--margin-top) + var(--header-height) + var(--content-height));
         width: var(--modal-width);
-        box-shadow: 0 -1px 0px 0px $trasp-light-gray;
         background: white;
-        
+
+        display: flex;
+        gap: 5px;
+        padding: 5px;
+        box-sizing: border-box;
+        border-radius: 10px;
+
         textarea,
         textarea:visited,
         textarea:focus,
@@ -186,19 +191,18 @@
             line-height: 1.4em;
             font-weight: 300;
             max-height: 110px;
-            min-height: auto;
-            height: 20px;
-            padding: 0px 30px 0px 10px;
-            margin: 10px 0px 10px;
+            min-height: 36px !important;
+            padding: 10px 12px;
+            margin: 0;
             border: none;
         }
 
         .chat21-textarea-button {
-            position: absolute;
+            position: static;
             display: block;
             bottom: 22px;
-            width: 20px;
-            height: 20px;
+            width: 28px;
+            height: 28px;
             opacity: 0.3;
             cursor: initial;
             &.active {
@@ -208,14 +212,25 @@
         }
 
         #chat21-button-send {
-            right: 8px;
-            bottom: 10px;
+            right: 16px;
+            bottom: 16px;
+            width: 36px;
+            height: 36px;
+            background-color: #4556F2;
+            border-radius: 50%;
+            opacity: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .visible-text-area {
+            border-radius: 10px;
+            background-color: #F6F7FB;
             pointer-events: auto;
+            flex-grow: 1;
         }
-        
+
         .chat21-textarea-button {
             pointer-events: auto;
         }
@@ -232,5 +247,5 @@
             all: unset;
         }
     }
-    
+
 }

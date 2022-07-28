@@ -1,11 +1,11 @@
 @import '../../../../../sass/variables';
 
 :host {
-    --backgroundColor: #{$blue};
-    --textColor: #{$bck-msg-sent};
-    --hoverBackgroundColor: #{$bck-msg-sent};
-    --hoverTextColor: #{$blue};
-    --buttonFontSize: #{$button-in-msg-font-size};
+  --backgroundColor: #F1F2F6;
+  --textColor: #1B384F;
+  --hoverBackgroundColor: #F1F2F6;
+  --hoverTextColor: #1B384F;
+  --buttonFontSize: 16px;
 }
 
 
@@ -16,19 +16,19 @@
     max-width: 300px;
     min-width: inherit;
     cursor: pointer;
-    border: 1px solid var(--textColor); //$blue
-    border-radius: 20px;
+    border: 1px solid #1B384F; //$blue
+    border-radius: 12px;
     margin: 3px;
-    background: var(--backgroundColor);
+    background: #F1F2F6;
     overflow: hidden;
     font-family: 'Muli', sans-serif;
-    font-size: var(--buttonFontSize);
+    font-size: 16px;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     white-space: nowrap;
     letter-spacing: -0.24px;
     -webkit-font-smoothing: antialiased;
-    color: var(--textColor); //$blue
+    color: #1B384F; //$blue
     line-height: 16px;
 }
 
@@ -37,11 +37,12 @@
     transition: background-color .6s ease;
     &:focus,
     &:hover {
-        color: var(--hoverTextColor);
-        background: var(--hoverBackgroundColor);
+        color: #ffffff;
+        background: #4556f2;
+        border: 1px solid #4556f2;
         .icon-button-action {
             svg {
-                fill: $black;
+                fill: #ffffff;
             }
         }
     }

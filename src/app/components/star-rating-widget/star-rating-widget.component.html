@@ -26,7 +26,7 @@ svg.star:hover{
                     </div>
                 </div>
             </div> -->
-            
+
             <!-- CONTENT HEADER -->
             <div class="c21-header-content">
                 <!-- ICON BACK -->
@@ -64,7 +64,7 @@ svg.star:hover{
                         </div>
                     </div>
                     <div class="clear"></div>
-                   
+
                     <!-- CONTENT -->
                     <div class="c21-modal-content">
                         <div class="default-text">{{ g.YOUR_OPINION_ON_OUR_CUSTOMER_SERVICE }}</div>
@@ -103,17 +103,14 @@ svg.star:hover{
                      <!-- ICON CLOSE -->
                     <button tabindex="1414"  class="c21-button-primary" (click)="returnClosePage()" [ngStyle]="{'background-color': stylesMap?.get('themeColor'), 'border-color': stylesMap?.get('themeColor'), 'color': stylesMap?.get('foregroundColor') }">
                         <span class="v-align-center">
-                            <svg role="img" aria-labelledby="altIconTitle" [ngStyle]="{'fill': stylesMap?.get('foregroundColor')}" xmlns="http://www.w3.org/2000/svg"
-                                width="18" height="18" viewBox="0 0 24 24">
-                                <path fill="none" d="M0 0h24v24H0V0z" />
-                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
-                                <title id="altIconTitle">{{ g.CLOSE }}</title>    
-                            </svg>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.53034 5.46966C6.23745 5.17677 5.76257 5.17677 5.46968 5.46966C5.17679 5.76256 5.17679 6.23743 5.46968 6.53032L10.9393 12L5.46967 17.4697C5.17678 17.7626 5.17678 18.2374 5.46967 18.5303C5.76256 18.8232 6.23744 18.8232 6.53033 18.5303L12 13.0607L17.4697 18.5303C17.7626 18.8232 18.2375 18.8232 18.5303 18.5303C18.8232 18.2374 18.8232 17.7626 18.5303 17.4697L13.0607 12L18.5303 6.53033C18.8232 6.23744 18.8232 5.76256 18.5303 5.46967C18.2374 5.17678 17.7626 5.17678 17.4697 5.46967L12 10.9393L6.53034 5.46966Z" fill="white"/>
+                          </svg>
                         </span>
                         <span class="v-align-center c21-label-button">
                             {{ g.CLOSE }}
                           <!-- {{translationMap?.get('LABEL_START_NW_CONV')}} -->
-                        </span>  
+                        </span>
                         <div class="clear"></div>
                     </button>
                 </div>
@@ -130,7 +127,7 @@ svg.star:hover{
                     <div class="clear"></div>
                     <div class="c21-step-content">
                         <!-- il tuo voto: -->
-                        
+
                         <!-- <div class="chat21-stars">
                             <span *ngIf="rate>0" class="fa fa-star checked"></span>
                             <span *ngIf="rate>1" class="fa fa-star checked"></span>
@@ -139,7 +136,7 @@ svg.star:hover{
                             <span *ngIf="rate>4" class="fa fa-star checked"></span>
                         </div> -->
                         <!-- <div class="default-text">{{ g.YOUR_RATING }}</div> -->
-                        
+
 
                         <!-- Scrivi la tua opinione...(opzionale) -->
                         <textarea #textbox rows="1" id="chat21-message-rate-context" class='textarea-rate'
@@ -149,34 +146,28 @@ svg.star:hover{
                         <!-- ICON CLOSE -->
                         <button tabindex="1415"  class="c21-button-primary" (click)="returnClosePage()" [ngStyle]="{'background-color': stylesMap?.get('themeColor'), 'border-color': stylesMap?.get('themeColor'), 'color': stylesMap?.get('foregroundColor') }">
                             <span class="v-align-center">
-                                <svg role="img" aria-labelledby="altIconTitle" [ngStyle]="{'fill': stylesMap?.get('foregroundColor')}" xmlns="http://www.w3.org/2000/svg"
-                                    width="18" height="18" viewBox="0 0 24 24">
-                                    <path fill="none" d="M0 0h24v24H0V0z" />
-                                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
-                                    <title id="altIconTitle">{{ g.CLOSE }}</title>    
-                                </svg>
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.53034 5.46966C6.23745 5.17677 5.76257 5.17677 5.46968 5.46966C5.17679 5.76256 5.17679 6.23743 5.46968 6.53032L10.9393 12L5.46967 17.4697C5.17678 17.7626 5.17678 18.2374 5.46967 18.5303C5.76256 18.8232 6.23744 18.8232 6.53033 18.5303L12 13.0607L17.4697 18.5303C17.7626 18.8232 18.2375 18.8232 18.5303 18.5303C18.8232 18.2374 18.8232 17.7626 18.5303 17.4697L13.0607 12L18.5303 6.53033C18.8232 6.23744 18.8232 5.76256 18.5303 5.46967C18.2374 5.17678 17.7626 5.17678 17.4697 5.46967L12 10.9393L6.53034 5.46966Z" fill="white"/>
+                              </svg>
                             </span>
                             <span class="v-align-center c21-label-button">
                                 {{ g.CLOSE }}
                               <!-- {{translationMap?.get('LABEL_START_NW_CONV')}} -->
-                            </span>  
+                            </span>
                             <div class="clear"></div>
                         </button>
 
                         <!-- ICON SUBMIT -->
-                        <button tabindex="1416"  class="c21-button-primary" (click)="sendRate()" [ngStyle]="{'background-color': stylesMap?.get('themeColor'), 'border-color': stylesMap?.get('themeColor'), 'color': stylesMap?.get('foregroundColor') }">
+                        <button tabindex="1416"  class="c21-button-primary c21-button-submit" (click)="sendRate()" [ngStyle]="{'background-color': stylesMap?.get('themeColor'), 'border-color': stylesMap?.get('themeColor'), 'color': stylesMap?.get('foregroundColor') }">
                             <span class="v-align-center">
-                                <svg role="img" aria-labelledby="altIconTitle" [ngStyle]="{'fill': stylesMap?.get('foregroundColor')}" xmlns="http://www.w3.org/2000/svg"
-                                    width="18" height="18" viewBox="0 0 24 24">
-                                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-                                    <path d="M0 0h24v24H0z" fill="none"/>
-                                    <title id="altIconTitle">{{ g.SUBMIT }}</title>    
-                                </svg>
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.19279 6.57843C1.36183 4.08551 3.91012 1.80468 6.29602 2.90587L20.0983 9.27616C22.422 10.3487 22.422 13.6514 20.0983 14.7239L6.29603 21.0941C3.91012 22.1953 1.36183 19.9145 2.19281 17.4216L3.68376 12.9487C3.88903 12.3329 3.88903 11.6672 3.68377 11.0514L2.19279 6.57843ZM5.66743 4.26781L19.4697 10.6381C20.6316 11.1743 20.6316 12.8257 19.4697 13.362L5.66744 19.7322C4.47449 20.2828 3.20034 19.1424 3.61583 17.8959L5.10679 13.4231C5.18037 13.2023 5.23637 12.9773 5.27479 12.75H14C14.4142 12.75 14.75 12.4142 14.75 12C14.75 11.5858 14.4142 11.25 14 11.25H5.27477C5.23636 11.0228 5.18037 10.7977 5.10679 10.577L3.61582 6.10409C3.20033 4.85763 4.47449 3.71721 5.66743 4.26781Z" fill="white"/>
+                              </svg>
                             </span>
                             <span class="v-align-center c21-label-button">
                                 {{ g.SUBMIT }}
                               <!-- {{translationMap?.get('LABEL_START_NW_CONV')}} -->
-                            </span>  
+                            </span>
                             <div class="clear"></div>
                         </button>
 
@@ -193,7 +184,7 @@ svg.star:hover{
                         </div>
                     </div>
                     <div class="clear"></div>
-                
+
                     <!-- CONTENT -->
                     <div class="c21-step-content">
                         <div class="default-title">{{ g.THANK_YOU_FOR_YOUR_EVALUATION }}</div>
@@ -203,17 +194,14 @@ svg.star:hover{
                     <!-- ICON CLOSE -->
                     <button tabindex="1415"  class="c21-button-primary" (click)="returnClosePage()" [ngStyle]="{'background-color': stylesMap?.get('themeColor'), 'border-color': stylesMap?.get('themeColor'), 'color': stylesMap?.get('foregroundColor') }">
                         <span class="v-align-center">
-                            <svg role="img" aria-labelledby="altIconTitle" [ngStyle]="{'fill': stylesMap?.get('foregroundColor')}" xmlns="http://www.w3.org/2000/svg"
-                                width="18" height="18" viewBox="0 0 24 24">
-                                <path fill="none" d="M0 0h24v24H0V0z" />
-                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
-                                <title id="altIconTitle">{{ g.CLOSE }}</title>    
-                            </svg>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.53034 5.46966C6.23745 5.17677 5.76257 5.17677 5.46968 5.46966C5.17679 5.76256 5.17679 6.23743 5.46968 6.53032L10.9393 12L5.46967 17.4697C5.17678 17.7626 5.17678 18.2374 5.46967 18.5303C5.76256 18.8232 6.23744 18.8232 6.53033 18.5303L12 13.0607L17.4697 18.5303C17.7626 18.8232 18.2375 18.8232 18.5303 18.5303C18.8232 18.2374 18.8232 17.7626 18.5303 17.4697L13.0607 12L18.5303 6.53033C18.8232 6.23744 18.8232 5.76256 18.5303 5.46967C18.2374 5.17678 17.7626 5.17678 17.4697 5.46967L12 10.9393L6.53034 5.46966Z" fill="white"/>
+                          </svg>
                         </span>
                         <span class="v-align-center c21-label-button">
                             {{ g.CLOSE }}
                           <!-- {{translationMap?.get('LABEL_START_NW_CONV')}} -->
-                        </span>  
+                        </span>
                         <div class="clear"></div>
                     </button>
                 </div>

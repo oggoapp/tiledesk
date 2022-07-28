@@ -3,7 +3,7 @@
 <html><head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Widget test page </title>
     <style>
@@ -32,7 +32,7 @@
             width: 109px;
             height: 39px;
             background-repeat: no-repeat;
-            background-image: url(./tiledesk_widget_files/logo@2x-black.png);      
+            background-image: url(./tiledesk_widget_files/logo@2x-black.png);
             background-size: contain;
             position: absolute;
             top: 50%;
@@ -56,7 +56,7 @@
 
         body {
             background-color: #f4f5f5 !important;
-            font-family: Roboto, "Helvetica Neue", sans-serif;
+            font-family: Avenir, "Helvetica Neue", sans-serif;
             font-weight: 300;
             overflow: hidden;
         }
@@ -140,7 +140,7 @@
 
         .col-md-7 {
             margin-top: 30px;
-            padding: 0; 
+            padding: 0;
         }
 
 
@@ -297,7 +297,7 @@
             width: 200px;
         }
 
-        
+
 
     </style>
 
@@ -342,7 +342,7 @@
     <meta property="og:description" content="">
     <meta property="og:locale" content="en">
     <meta property="og:image" content="">
-    
+
     <link rel="icon" type="image/png" href="https://tiledesk.com/wp-content/uploads/2020/07/tiledesk-favicon.png">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script defer="" src="./tiledesk_widget_files/jquery.min.js"></script>
@@ -367,7 +367,7 @@
             w.Tiledesk=i;
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
-            js = d.createElement(s); 
+            js = d.createElement(s);
             js.id = id; js.async = true; js.src = "../../launch.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'tiledesk-jssdk'));
@@ -376,7 +376,7 @@
             console.log("onLoadParams Tiledesk FN", event_data);
             window.tiledesk.open();
             if(document.getElementById('events')){
-                document.getElementById('events').value +=  'onLoadParams --> FIRED!' + '\n' 
+                document.getElementById('events').value +=  'onLoadParams --> FIRED!' + '\n'
                 document.getElementById('events').scrollTop = document.getElementById('events').scrollHeight
             }
 
@@ -385,113 +385,113 @@
         });
 
         window.Tiledesk('onBeforeInit', function(event_data) {
-            console.log("onBeforeInit Tiledesk FN", event_data); 
+            console.log("onBeforeInit Tiledesk FN", event_data);
             if(document.getElementById('events')){
-                document.getElementById('events').value +=  'onBeforeInit --> FIRED!' + '\n' 
+                document.getElementById('events').value +=  'onBeforeInit --> FIRED!' + '\n'
                 document.getElementById('events').scrollTop = document.getElementById('events').scrollHeight
             }
         });
-        
+
         window.Tiledesk('onInit', function(event_data) {
-            console.log("onInit Tiledesk FN", event_data); 
+            console.log("onInit Tiledesk FN", event_data);
             setTimeout(() => {
                 initLang();
                 initDefaultSettings();
                 document.getElementById("preloader").style.display = "none";
-                document.getElementById('events').value += 'onInit --> FIRED!' + '\n' 
+                document.getElementById('events').value += 'onInit --> FIRED!' + '\n'
                 document.getElementById('events').scrollTop = document.getElementById('events').scrollHeight
             }, 1000);
         });
-        
+
         window.Tiledesk('onAuthStateChanged', function(event_data) {
-            console.log("onAuthStateChanged Tiledesk FN", event_data); 
+            console.log("onAuthStateChanged Tiledesk FN", event_data);
             if(document.getElementById('events')){
-                document.getElementById('events').value +=  'onAuthStateChanged --> FIRED! ' + event_data.detail.event + '\n' 
+                document.getElementById('events').value +=  'onAuthStateChanged --> FIRED! ' + event_data.detail.event + '\n'
                 document.getElementById('events').scrollTop = document.getElementById('events').scrollHeight
             }
         });
 
         window.Tiledesk('onNewConversationComponentInit', function(event_data) {
-            console.log("onNewConversationComponentInit Tiledesk FN", event_data); 
+            console.log("onNewConversationComponentInit Tiledesk FN", event_data);
             if(document.getElementById('events')){
-                document.getElementById('events').value +=  'onNewConversationComponentInit --> FIRED! ' + '\n' 
+                document.getElementById('events').value +=  'onNewConversationComponentInit --> FIRED! ' + '\n'
                 document.getElementById('events').scrollTop = document.getElementById('events').scrollHeight
             }
         });
 
         window.Tiledesk('onBeforeMessageSend', function(event_data) {
             if(document.getElementById('events')){
-                document.getElementById('events').value +=  'onBeforeMessageSend --> FIRED!' + '\n' 
+                document.getElementById('events').value +=  'onBeforeMessageSend --> FIRED!' + '\n'
                 document.getElementById('events').scrollTop = document.getElementById('events').scrollHeight
             }
         });
 
         window.Tiledesk('onAfterMessageSend', function(event_data) {
             if(document.getElementById('events')){
-                document.getElementById('events').value +=  'onAfterMessageSend --> FIRED!' + '\n' 
+                document.getElementById('events').value +=  'onAfterMessageSend --> FIRED!' + '\n'
                 document.getElementById('events').scrollTop = document.getElementById('events').scrollHeight
             }
         });
 
         window.Tiledesk('onMessageCreated', function(event_data) {
             if(document.getElementById('events')){
-                document.getElementById('events').value +=  'onMessageCreated --> FIRED!' + '\n' 
+                document.getElementById('events').value +=  'onMessageCreated --> FIRED!' + '\n'
                 document.getElementById('events').scrollTop = document.getElementById('events').scrollHeight
             }
         });
 
         window.Tiledesk('onOpen', function(event_data) {
             if(document.getElementById('events')){
-                document.getElementById('events').value +=  'onOpen --> FIRED!' + '\n' 
+                document.getElementById('events').value +=  'onOpen --> FIRED!' + '\n'
                 document.getElementById('events').scrollTop = document.getElementById('events').scrollHeight
             }
         });
 
         window.Tiledesk('onClose', function(event_data) {
             if(document.getElementById('events')){
-                document.getElementById('events').value +=  'onClose --> FIRED!' + '\n' 
+                document.getElementById('events').value +=  'onClose --> FIRED!' + '\n'
                 document.getElementById('events').scrollTop = document.getElementById('events').scrollHeight
             }
         });
 
         window.Tiledesk('onOpenEyeCatcher', function(event_data) {
             if(document.getElementById('events')){
-                document.getElementById('events').value +=  'onOpenEyeCatcher --> FIRED!' + '\n' 
+                document.getElementById('events').value +=  'onOpenEyeCatcher --> FIRED!' + '\n'
                 document.getElementById('events').scrollTop = document.getElementById('events').scrollHeight
             }
         });
 
         window.Tiledesk('onClosedEyeCatcher', function(event_data) {
             if(document.getElementById('events')){
-                document.getElementById('events').value +=  'onClosedEyeCatcher --> FIRED!' + '\n' 
+                document.getElementById('events').value +=  'onClosedEyeCatcher --> FIRED!' + '\n'
                 document.getElementById('events').scrollTop = document.getElementById('events').scrollHeight
             }
         });
 
         window.Tiledesk('onNewConversation', function(event_data) {
             if(document.getElementById('events')){
-                document.getElementById('events').value +=  'onNewConversation --> FIRED!' + '\n' 
+                document.getElementById('events').value +=  'onNewConversation --> FIRED!' + '\n'
                 document.getElementById('events').scrollTop = document.getElementById('events').scrollHeight
             }
         });
 
         window.Tiledesk('onConversationUpdated', function(event_data) {
             if(document.getElementById('events')){
-                document.getElementById('events').value +=  'onConversationUpdated --> FIRED!' + '\n' 
+                document.getElementById('events').value +=  'onConversationUpdated --> FIRED!' + '\n'
                 document.getElementById('events').scrollTop = document.getElementById('events').scrollHeight
             }
         });
 
         window.Tiledesk('onCloseMessagePreview', function(event_data) {
             if(document.getElementById('events')){
-                document.getElementById('events').value +=  'onCloseMessagePreview --> FIRED!' + '\n' 
+                document.getElementById('events').value +=  'onCloseMessagePreview --> FIRED!' + '\n'
                 document.getElementById('events').scrollTop = document.getElementById('events').scrollHeight
             }
         });
 
         window.Tiledesk('onBeforeDepartmentsFormRender', function(event_data) {
             if(document.getElementById('events')){
-                document.getElementById('events').value +=  'onBeforeDepartmentsFormRender --> FIRED!' + '\n' 
+                document.getElementById('events').value +=  'onBeforeDepartmentsFormRender --> FIRED!' + '\n'
                 document.getElementById('events').scrollTop = document.getElementById('events').scrollHeight
             }
         });
@@ -503,18 +503,18 @@
         var queryString = window.location.search;
         var urlParams = new URLSearchParams(queryString);
         var urlToConsole = urlParams.get('goToConsole');
-        
+
         var textAreaEvents = document.getElementById('events')
         if(urlToConsole){
             baseUrlConsole = urlToConsole;
         }
-  
+
         var currentUrl = window.location.href
         function shareOnFacebook() {
             var fbShareUrl = "https://www.facebook.com/sharer.php?u=" + encodeURIComponent(currentUrl);
             window.open(
                 fbShareUrl,
-                '_blank' 
+                '_blank'
             );
         }
 
@@ -522,7 +522,7 @@
             var TwShareUrl = "https://twitter.com/share?url=" + encodeURIComponent(currentUrl);
             window.open(
                 TwShareUrl,
-                '_blank' 
+                '_blank'
             );
          }
 
@@ -530,24 +530,24 @@
             var LinkedinShareUrl = "https://www.linkedin.com/shareArticle?mini=true&url=" + encodeURIComponent(currentUrl);
             window.open(
                 LinkedinShareUrl,
-                '_blank' 
+                '_blank'
             );
          }
 
-        function shareOnTelegram() {                                    
+        function shareOnTelegram() {
             var TelegramShareUrl = "tg://msg_url?url=" + encodeURIComponent(currentUrl) ;
-            // console.log('TelegramShareUrl ', TelegramShareUrl ) 
+            // console.log('TelegramShareUrl ', TelegramShareUrl )
             window.open(
                 TelegramShareUrl,
-                '_blank' 
+                '_blank'
             );
          }
 
-        function shareOnWhatsapp() {            
+        function shareOnWhatsapp() {
             var WhatsappShareUrl = "whatsapp://send?text=" + currentUrl;
             window.open(
                 WhatsappShareUrl,
-                '_blank' 
+                '_blank'
             );
         }
 
@@ -555,12 +555,12 @@
             var url = new URL(currentUrl);
             var tiledesk_projectid = url.searchParams.get("tiledesk_projectid");
             var project_name = url.searchParams.get("project_name");
-           
+
             var urlConsole = baseUrlConsole + "#/project/"+tiledesk_projectid+"/home";
             //var urlConsole = "dashboard/#/project/"+tiledesk_projectid+"/home";
             window.open(
                 urlConsole,
-                '_blank' 
+                '_blank'
             );
         }
 
@@ -597,7 +597,7 @@
             }else{
                 document.getElementById('preChatForm').style.color = 'red'
             }
-            
+
         }
 
         function onClickGetPreChatForm(){
@@ -639,7 +639,7 @@
             }
             return true;
         }
-    
+
         function onClickStartFromHome(){
             let status = document.querySelector('input[name="startFromHome"]:checked').value
             window.tiledeskSettings['startFromHome'] = stringToBoolean(status)
@@ -1086,7 +1086,7 @@
                         let element = document.getElementById('calloutTimerText')
                         window.tiledeskSettings[elementName] = element.value
                     }
-                    
+
                 } else if (elementType === 'range'){
                     let element = document.getElementById(elementName)
                     window.tiledeskSettings[elementName] = element.value + 'px'
@@ -1106,20 +1106,20 @@
         }
 
 
-                        
+
         var url = new URL(currentUrl);
         var tiledesk_projectid = url.searchParams.get("tiledesk_projectid");
         var project_name = url.searchParams.get("project_name");
         var urlConsole = baseUrlConsole + "#/projects/"+tiledesk_projectid+"/home";
         // console.log('tiledesk_projectid: ', tiledesk_projectid);
         // console.log('project_name: ', project_name);
-        
+
         // window.onload = function() {
         //     document.getElementById("project_id").innerHTML = '"' + tiledesk_projectid + '"';
         //     document.getElementById("project_name").innerHTML = project_name;
         // }
 
-        
+
         var isOpen = getQueryVariable("isOpen");
         //var tiledesk_projectid = url.searchParams.get("tiledesk_projectid");
 
@@ -1326,7 +1326,7 @@
                 { code: 'yo', name: 'Yoruba', type: '--- Needs own translation ---' },
                 { code: 'za', name: 'Zhuang, Chuang', type: '--- Needs own translation ---' },
                 { code: 'zu', name: 'Zulu', type: '--- Needs own translation--'}
-            ]  
+            ]
             let optionList = document.getElementById('lang')
             languages.forEach(option => {
                 optionList.add(
@@ -1343,7 +1343,7 @@
         }
 
     </script>
-    
+
 </head>
 
 <body class="website white" >
@@ -1411,7 +1411,7 @@
                         <div class="row" style="margin:5px 0px">
                             <button class="btn btn-light" onclick="onClickSignInAnonymous()">SingIn Anonymous <i class="fa fa-sign-in" aria-hidden="true"></i></button>
                         </div>
-                        
+
                     </div>
                     <div class="row section">
                         <div><h3 style="line-height: 0.3;">MANAGE <i><b>Pre-Chat Form</b></i></h3></div>
@@ -1981,7 +1981,7 @@
                                 <button class="btn btn-light" onclick="onClickButtonFontSize()">Test this setting <i class="fa fa-magic" aria-hidden="true"></i></button>
                             </div>
                         </div>
-                        
+
                         <div class="row testAllBtn">
                                 <button class="btn btn-light" onclick="onClickTestAll()">TEST ALL</button>
                         </div>
@@ -1999,7 +1999,7 @@
 
                 <div class="col-md-6"></div>
             </div>
-            
+
             <div class="row">
                 <div class="col-md-6">
                     <h1 id="project_name" style="min-height: 39px;"></h1>
@@ -2012,7 +2012,7 @@
                 </div>
                 <div class="col-md-6"></div>
             </div>
-            
+
 
             <div class="modal fade" tabindex="-1" id="embedModal" role="dialog">
                 <div class="modal-dialog">
@@ -2026,8 +2026,8 @@
                                 &lt;script type=&quot;application/javascript&quot;&gt; <br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;window.tiledeskSettings = <br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;projectid: </span> 
-                                <span id="project_id"> </span> 
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;projectid: </span>
+                                <span id="project_id"> </span>
                                 <span style="border:none !important">
                                 <br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}; <br>
@@ -2057,13 +2057,13 @@
                         </div>
                         <div class="modal-body">
 
-                            <a onclick="shareOnFacebook()" style="cursor: pointer;text-decoration: none;">    
-                                
+                            <a onclick="shareOnFacebook()" style="cursor: pointer;text-decoration: none;">
+
                                 <img src="./tiledesk_widget_files/facebook.png" alt="Facebook">
                             </a>
 
                             <!-- Twitter -->
-                            <a onclick="shareOnTwitter()" style="cursor: pointer;text-decoration: none;">     
+                            <a onclick="shareOnTwitter()" style="cursor: pointer;text-decoration: none;">
                                 <img src="./tiledesk_widget_files/twitter.png" alt="Twitter">
                             </a>
 

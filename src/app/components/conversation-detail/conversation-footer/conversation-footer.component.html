@@ -1,25 +1,30 @@
-<div id="floating-container" *ngIf="isConversationArchived" class="fade-in-bottom" start-focus-chat21-conversation-component> 
+<div id="floating-container" *ngIf="isConversationArchived" class="fade-in-bottom" start-focus-chat21-conversation-component>
     <button tabindex="1040" aflistconv #aflistconv  class="c21-button-primary" (click)="openNewConversation()" [ngStyle]="{'background-color': stylesMap.get('themeColor'), 'border-color': stylesMap.get('themeColor'), 'color': stylesMap?.get('foregroundColor')}">
         <span class="v-align-center">
-          <svg [ngStyle]="{'fill': 'yellow' }" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"  [ngStyle]="{'fill': stylesMap?.get('foregroundColor')}"/>
+          <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_37232_299" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="2" y="3" width="20" height="20">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 3.0004H21.999V22.4994H2.5V3.0004Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask0_37232_299)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3049 14.8178L14.9619 20.7508C15.1219 21.0108 15.3719 21.0078 15.4729 20.9938C15.5739 20.9798 15.8169 20.9178 15.9049 20.6228L20.4779 5.1778C20.5579 4.9048 20.4109 4.7188 20.3449 4.6528C20.2809 4.5868 20.0979 4.4458 19.8329 4.5208L4.37688 9.0468C4.08388 9.1328 4.01988 9.3788 4.00588 9.4798C3.99188 9.5828 3.98788 9.8378 4.24688 10.0008L10.2479 13.7538L15.5499 8.3958C15.8409 8.1018 16.3159 8.0988 16.6109 8.3898C16.9059 8.6808 16.9079 9.1568 16.6169 9.4508L11.3049 14.8178ZM15.3949 22.4998C14.6989 22.4998 14.0609 22.1458 13.6849 21.5378L9.80788 15.2468L3.45188 11.2718C2.76688 10.8428 2.40888 10.0788 2.51988 9.2758C2.62988 8.4728 3.18088 7.8348 3.95488 7.6078L19.4109 3.0818C20.1219 2.8738 20.8839 3.0708 21.4079 3.5928C21.9319 4.1198 22.1269 4.8898 21.9149 5.6038L17.3419 21.0478C17.1129 21.8248 16.4729 22.3738 15.6719 22.4808C15.5779 22.4928 15.4869 22.4998 15.3949 22.4998Z" fill="white"/>
+            </g>
           </svg>
         </span>
         <span class="v-align-center c21-label-button">
           {{translationMap?.get('LABEL_START_NW_CONV')}}
-        </span>  
+        </span>
         <div class="clear"></div>
     </button>
 </div>
 
 <div class="visible-text-area"  *ngIf="!isConversationArchived" [class.disabled] = "( isConversationArchived || hideTextReply)? true : null">
     <!-- isFilePendingToUpload || -->
-  <textarea 
+  <textarea
     [attr.disabled] = "(isConversationArchived || hideTextReply)? true : null"
     [attr.placeholder] ="(footerMessagePlaceholder)? footerMessagePlaceholder : translationMap?.get('LABEL_PLACEHOLDER')"
     start-focus-chat21-conversation-component
     inputTextArea
-    #textbox 
+    #textbox
     tabindex="1501"
     aria-labelledby="altTextArea"
     rows="1"
@@ -43,22 +48,21 @@
     <!-- ICON ATTACHMENT -->
     <label *ngIf="showAttachmentButton == true" tabindex="1502" aria-label="allegati" for="chat21-file" class="chat21-textarea-button" [class.active]="!isFilePendingToUpload && !isConversationArchived && !hideTextReply" id="chat21-start-upload-doc">
         <span class="v-align-center">
-            <svg xmlns="http://www.w3.org/2000/svg" [ngStyle]="{'fill': stylesMap?.get('themeColor') }" width="24" height="24" viewBox="0 0 28 28" transform="rotate(45)">
-                <!-- <path [ngStyle]="{'fill': g.themeColor}" d="M0 0h24v24H0V0z"/> -->
-                <path d="M16.5 6v11.5c0 2.21-1.79 4-4 4s-4-1.79-4-4V5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5v10.5c0 .55-.45 1-1 1s-1-.45-1-1V6H10v9.5c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5V5c0-2.21-1.79-4-4-4S7 2.79 7 5v12.5c0 3.04 2.46 5.5 5.5 5.5s5.5-2.46 5.5-5.5V6h-1.5z" />
-            </svg>
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M22.0226 8.67672C20.5419 7.19598 18.1411 7.19598 16.6604 8.67672L10.0607 15.2764C9.49121 15.8459 9.49121 16.7693 10.0607 17.3388C10.6302 17.9083 11.5536 17.9083 12.1231 17.3388L18.7228 10.7391C19.0645 10.3974 19.6185 10.3974 19.9602 10.7391C20.3019 11.0808 20.3019 11.6348 19.9602 11.9765L13.3606 18.5762C12.1076 19.8291 10.0762 19.8291 8.82328 18.5762C7.57035 17.3233 7.57035 15.2919 8.82328 14.0389L15.4229 7.43928C17.5871 5.27512 21.0959 5.27512 23.26 7.43928C25.4242 9.60344 25.4242 13.1122 23.26 15.2764L16.6604 21.876C13.585 24.9514 8.59883 24.9514 5.52345 21.876C2.44807 18.8007 2.44807 13.8145 5.52345 10.7391L12.1231 4.13945C12.4648 3.79774 13.0188 3.79774 13.3606 4.13945C13.7023 4.48116 13.7023 5.03517 13.3606 5.37688L6.76089 11.9765C4.36893 14.3685 4.36893 18.2466 6.76089 20.6386C9.15285 23.0306 13.031 23.0306 15.4229 20.6386L22.0226 14.0389C23.5033 12.5582 23.5033 10.1575 22.0226 8.67672Z" fill="#333333"/>
+          </svg>
         </span>
         <!-- accept="image/*, audio/* ,video/*, .pdf, .zip" -->
         <input
             [attr.disabled] = "(isFilePendingToUpload || isConversationArchived || hideTextReply)? true : null"
-            tabindex="1503" 
-            type="file" 
+            tabindex="1503"
+            type="file"
             aria-label="seleziona allegato"
             [accept]="fileUploadAccept"
             name="chat21-file"
             id="chat21-file"
             #chat21_file
-            class="inputfile" 
+            class="inputfile"
             [ngStyle]="{'display': 'block', height:'1px', width:'1px', overflow: 'hidden' }"
             (change)="detectFiles($event)"/>
     </label>
@@ -66,9 +70,10 @@
     <!-- <div [class.active]="isFileSelected && !isFilePendingToUpload &&" class="chat21-textarea-button" id="chat21-button-reset" (click)="resetLoadImage()"></div> -->
     <div tabindex="-1" class="chat21-textarea-button" [class.active]="!isConversationArchived && textInputTextArea && !hideTextReply" id="chat21-button-send" (click)="onSendPressed($event)">
         <span class="v-align-center">
-            <svg xmlns="http://www.w3.org/2000/svg" [ngStyle]="{'fill': stylesMap?.get('themeColor') }" width="24" height="24" viewBox="0 0 28 28">
-                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
-            </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.7256 20C11.3459 20 11.0321 19.7178 10.9824 19.3518L10.9756 19.25L10.9756 4.25C10.9756 3.83579 11.3114 3.5 11.7256 3.5C12.1053 3.5 12.4191 3.78215 12.4687 4.14823L12.4756 4.25L12.4756 19.25C12.4756 19.6642 12.1398 20 11.7256 20Z" fill="white"/>
+            <path d="M6.23271 10.829C5.94045 11.1225 5.46558 11.1235 5.17206 10.8313C4.90522 10.5656 4.88012 10.149 5.09734 9.85489L5.16977 9.77061L11.1938 3.72061C11.4603 3.45298 11.8784 3.42863 12.1724 3.64758L12.2567 3.72057L18.2817 9.77057C18.574 10.0641 18.573 10.5389 18.2795 10.8312C18.0127 11.0969 17.5959 11.1203 17.3028 10.9018L17.2188 10.829L11.7249 5.313L6.23271 10.829Z" fill="white"/>
+          </svg>
         </span>
     </div>
 </div>
@@ -87,11 +92,11 @@
       <span class="v-align-center">
           <svg aria-label="registra traccia audio" xmlns="http://www.w3.org/2000/svg" [ngStyle]="{'fill': g.themeColor}" width="24" height="24" viewBox="0 0 28 28">
               <path d="M12,14c1.66,0,3-1.34,3-3V5c0-1.66-1.34-3-3-3S9,3.34,9,5v6C9,12.66,10.34,14,12,14z"/>
-              <path d="M17,11c0,2.76-2.24,5-5,5s-5-2.24-5-5H5c0,3.53,2.61,6.43,6,6.92V21h2v-3.08c3.39-0.49,6-3.39,6-6.92H17z"/>    
+              <path d="M17,11c0,2.76-2.24,5-5,5s-5-2.24-5-5H5c0,3.53,2.61,6.43,6,6.92V21h2v-3.08c3.39-0.49,6-3.39,6-6.92H17z"/>
           </svg>
       </span>
   </button>
-  <button  *ngIf="isRecording" tabindex="1502" aria-label="stop registrazione" for="chat21-file" [class.active]="true" class="chat21-textarea-button c21-button-clean " id="chat21-start-mic" (click)="toggleRecording($event)" autofocus> 
+  <button  *ngIf="isRecording" tabindex="1502" aria-label="stop registrazione" for="chat21-file" [class.active]="true" class="chat21-textarea-button c21-button-clean " id="chat21-start-mic" (click)="toggleRecording($event)" autofocus>
       <span class="v-align-center">
           <svg aria-label="termina registrazione" xmlns="http://www.w3.org/2000/svg" [ngStyle]="{'fill': g.themeColor}" width="24" height="24" viewBox="0 0 28 28">
               <path d="M0 0h24v24H0z" fill="none"/>

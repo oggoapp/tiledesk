@@ -1,10 +1,10 @@
 <!-- tabindex="000"-->
 
-<button aflauncherbutton #aflauncherbutton id="c21-launcher-button" class="c21-button-clean scale-in-center c21-align-right" 
-    *ngIf="g.isLogged == true" 
+<button aflauncherbutton #aflauncherbutton id="c21-launcher-button" class="c21-button-clean scale-in-center c21-align-right"
+    *ngIf="g.isLogged == true"
     [ngStyle]="{ 'background-color': g.themeColor, 'bottom': g.marginY+'px!important', 'left':(g.align==='left')?g.marginX+'px!important':'', 'right':(g.align==='right')?g.marginX+'px!important':'', 'width': g.launcherWidth, 'height': g.launcherHeight, 'border-radius': g.baloonShape}"
     (click)="onSendPressed($event)"
-    tabindex="1000" 
+    tabindex="1000"
     aria-label="    apri chat"
     >
 
@@ -12,11 +12,8 @@
     <!-- [@enterBubbleAnimation] -->
     <div class="launcher-button rotate-center" >
         <!-- <img *ngIf="g.baloonImage !== '' " [src]="g.baloonImage" [ngStyle]="{'width': '100%', 'height': '100%', 'margin': 'auto'}"> -->
-        <svg role="img" [ngStyle]="{'fill': g.themeForegroundColor, 'display': (g.baloonImage==='')?'':'none' }" xmlns="http://www.w3.org/2000/svg" width="100%"
-            height="100%" viewBox="0 0 90 90">
-            <!-- <path fill="none" d="M0 0h24v24H0V0z" />
-            <path d="M33.57,31A4.58,4.58,0,0,0,29,35.57V58.3a1.94,1.94,0,0,0,3.32,1.38l3-3a.29.29,0,0,1,.21-.09H56.43A4.58,4.58,0,0,0,61,52V35.57A4.58,4.58,0,0,0,56.43,31Z" /> -->
-            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+        <svg width="34" [ngStyle]="{'display': (g.baloonImage==='')?'':'none' }" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.333252 17.025C0.333252 8.2452 7.34992 0.333332 17.0333 0.333332C26.4999 0.333332 33.6666 8.09498 33.6666 16.975C33.6666 27.2737 25.2666 33.6667 16.9999 33.6667C14.2666 33.6667 11.2333 32.9322 8.79992 31.4967C7.94992 30.9793 7.23325 30.5954 6.31659 30.8958L2.94992 31.8973C2.09992 32.1644 1.33325 31.4967 1.58325 30.5954L2.69992 26.8565C2.88325 26.339 2.84992 25.7882 2.58325 25.3542C1.14992 22.7169 0.333252 19.8292 0.333252 17.025ZM14.8333 17.025C14.8333 18.2101 15.7833 19.1616 16.9666 19.1783C18.1499 19.1783 19.0999 18.2101 19.0999 17.0417C19.0999 15.8566 18.1499 14.9052 16.9666 14.9052C15.7999 14.8885 14.8333 15.8566 14.8333 17.025ZM22.5166 17.0417C22.5166 18.2101 23.4666 19.1783 24.6499 19.1783C25.8333 19.1783 26.7833 18.2101 26.7833 17.0417C26.7833 15.8566 25.8333 14.9052 24.6499 14.9052C23.4666 14.9052 22.5166 15.8566 22.5166 17.0417ZM9.28325 19.1783C8.11659 19.1783 7.14992 18.2101 7.14992 17.0417C7.14992 15.8566 8.09992 14.9052 9.28325 14.9052C10.4666 14.9052 11.4166 15.8566 11.4166 17.0417C11.4166 18.2101 10.4666 19.1616 9.28325 19.1783Z" fill="white"/>
         </svg>
     </div>
 

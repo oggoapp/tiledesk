@@ -8,7 +8,7 @@
 #c21-app-list-conversations{
     position: relative;
     display: block;
-    width: 100%;
+    // width: 100%;
     height: auto;
     font-size: 10px;
 
@@ -23,10 +23,10 @@
         -webkit-appearance: initial;
         border: none;
         background-color: #ffffff;
-    
+        border-radius: 10px;
+
         .c21-body-conv{
             position: relative;
-            border-top: 1px solid #eee;
             // width: calc(100% - 48px);
             width: auto;
             text-align: left;
@@ -35,23 +35,23 @@
             display: flex;
             align-items: center;
             height: 80px;
-    
+
             .c21-left-conv {
                 width: auto;
                 height: 100%;
                 float: left;
                 display: flex;
                 align-items: center;
-    
+
                 .c21-icon-avatar {
                     position: relative;
                     padding: 0;
                     margin: 0;
-                    height: 40px;
-                    width: 40px;
-                    min-height: 40px;
-                    min-width: 40px;
-                    line-height: 40px;
+                    height: 32px;
+                    width: 32px;
+                    min-height: 32px;
+                    min-width: 32px;
+                    line-height: 32px;
                     border-radius: 50%;
                     overflow: hidden;
                     background-color: #ffffff;
@@ -79,10 +79,10 @@
                         background-size: cover;
                         border-radius: 50%;
                     }
-                    
+
                 }
             }
-    
+
             .c21-right-conv {
                 width: calc( 100% - 70px);
                 margin-left: 15px;
@@ -101,22 +101,22 @@
                     height: auto;
                 }
                 .c21-name {
-                    font-weight: 700;
-                    color: #3a3c4c;
-                    font-size: 1.3em;
+                    font-weight: 800;
+                    color: #1B384F;
+                    font-size: 1.6em;
                     line-height: 1.7;
                     min-height: 20px;
                 }
                 .c21-msg {
-                    font-weight: 200;
-                    color: #3a3c4c;
-                    font-size: 1.3em;
+                    font-weight: 400;
+                    color: #6D7885;
+                    font-size: 1.5em;
                     line-height: 1.7;
                     max-height: 21px;
-                    
+
                 }
                 .not-read.c21-msg {
-                    font-weight: 500;
+                  color: #1B384F
                 }
 
                 .archived.c21-msg {
@@ -125,31 +125,51 @@
             }
         }
     }
-    
+
     .c21-item-conversation:hover,
     .c21-item-conversation:focus,
     .c21-item-conversation:active {
         // outline-width: 0px;
-        background-color: #fafafa;
+        background-color: #465AE9;
+
+        .c21-name {
+          color: #ffffff !important;
+        }
+
+        .c21-last-time {
+          color: #F6F7FB !important;
+        }
+
+        .c21-msg {
+          color: #F6F7FB !important;
+        }
+
+        .c21-msg.not-read {
+          color: #ffffff !important;
+        }
+
+        .c21-divBudge {
+          background-color: #ffffff !important;
+        }
     }
-    
+
     .c21-ball {
         position: relative;
-        border: 2px solid #ffffff;
-        width: 52px;
-        height: 52px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         margin: 0;
         display: inline-flex;
         align-items: center;
         text-align: center;
         margin-left: -10px;
+        background-color: #EFEFEF !important;
         .c21-ball-label {
-            color: #ffffff;
+            color: #000000;
             margin: auto;
-            font-size: 20px;
+            font-size: 30px;
             user-select: none;
-            font-weight: 500;
+            font-weight: 700;
         }
         .c21-avatar-image {
             position: absolute;
@@ -164,10 +184,10 @@
             border-radius: 50%;
         }
     }
-    
+
     .c21-divBudge {
         position: absolute;
-        top: 40px;
+        top: 47px;
         left: inherit;
         right: 0px;
         width: 10px;
@@ -176,7 +196,7 @@
         font-size: 1.2em;
         line-height: 10px;
         border-radius: 50%;
-        background-color: $blue;
+        background-color: #465AE9 !important;
         color: white;
         font-weight: bold;
         padding: 0px;

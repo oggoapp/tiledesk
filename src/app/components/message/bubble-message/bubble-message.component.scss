@@ -3,7 +3,7 @@
 
 .messages {
     border-radius: $border-radius-bubble-message;
-    padding: 0;
+    padding: 0 !important;
     word-wrap: break-word;
     // padding: 14px;
     // padding: 6px 6px 6px 6px;
@@ -22,7 +22,7 @@
     //     font-weight: 300;
     //     overflow: hidden;
     // }
-    
+
     img {
         border-radius: $border-radius-bubble-message;
         padding: 3px;
@@ -33,17 +33,23 @@
         object-fit: cover;
     }
     .message_innerhtml {
+        font-size: 1.6em !important;
         margin: 0px;
         // padding: 0px 14px;
         &.marked{
-            padding:8px;
+            padding:0;
             margin-block-start: -1em!important;
             margin-block-end: -1em!important;
         }
-        
+
         .text-message {
             padding-top: 14px;
         }
+
+        p {
+          margin-top: 20px;
+          margin-bottom: 10px;
+        }
     }
-    
+
 }

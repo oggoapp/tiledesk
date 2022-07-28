@@ -3,7 +3,7 @@
 <html><head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Widget test page </title>
     <style>
@@ -32,7 +32,7 @@
             width: 109px;
             height: 39px;
             background-repeat: no-repeat;
-            background-image: url(./tiledesk_widget_files/logo@2x-black.png);      
+            background-image: url(./tiledesk_widget_files/logo@2x-black.png);
             background-size: contain;
             position: absolute;
             top: 50%;
@@ -56,7 +56,7 @@
 
         body {
             background-color: #f4f5f5 !important;
-            font-family: Roboto, "Helvetica Neue", sans-serif;
+            font-family: Avenir, "Helvetica Neue", sans-serif;
             font-weight: 300;
             overflow: hidden;
         }
@@ -165,7 +165,7 @@
             height: 20px;
             margin-left: 20px;
         }
-        
+
 
     </style>
 
@@ -210,7 +210,7 @@
     <meta property="og:description" content="">
     <meta property="og:locale" content="en">
     <meta property="og:image" content="">
-    
+
     <link rel="icon" type="image/png" href="https://tiledesk.com/wp-content/uploads/2020/07/tiledesk-favicon.png">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <script defer="" src="./tiledesk_widget_files/jquery.min.js"></script>
@@ -225,7 +225,7 @@
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id; //js.async=!0;
-        js.src = "../../launch.js"; 
+        js.src = "../../launch.js";
         fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'tiledesk-jssdk'));
 
@@ -240,34 +240,34 @@
 
         (function(d, s, id) {
             var w=window; var d=document;
-            var i=function() { 
+            var i=function() {
                 i.c(arguments);
             };
             i.q=[];
-            i.c=function(args){ 
+            i.c=function(args){
                 i.q.push(args);
             };
             w.Tiledesk=i;
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
-            js = d.createElement(s); 
+            js = d.createElement(s);
             js.id = id; js.async = true; js.src = "../../launch.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'tiledesk-jssdk'));
-        
+
         window.Tiledesk('onLoadParams', function(event_data) {
             console.log("onLoadParams Tiledesk FN", event_data);
             // window.Tiledesk('signInWithCustomToken', 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDliOGVmYTg3MzJlYjAwMTQxNzYzZDlfNWU0ZWNiOThiNzhlZTQwMDE3NDA2MTEwIiwiZmlyc3RuYW1lIjoiS2VsbHkiLCJsYXN0bmFtZSI6IkdyYWNlIiwiZW1haWwiOiJncmFjZUBlbWFpbG5hLmNvIiwic3ViIjoidXNlcmV4dGVybmFsIiwiYXVkIjoiaHR0cHM6Ly90aWxlZGVzay5jb20vcHJvamVjdHMvNjA5YjhlZmE4NzMyZWIwMDE0MTc2M2Q5IiwiaWF0IjoxNjQxODAzODk0fQ.p0reTwd25p93CsDTyQa8tkihgFxThAI4DXloNc6vbXw')
             //                 .then(response => console.log('signInWithCustomToken: user_logged -> ', response))
             //                 .catch((error)=> console.error('signInWithCustomToken: error', error))
         });
-        
+
         window.Tiledesk('onBeforeInit', function(event_data) {
         	console.log("onBeforeInit Tiledesk FN", event_data);
         });
-        
+
         window.Tiledesk('onInit', function(event_data) {
-            console.log("onInit Tiledesk FN", event_data); 
+            console.log("onInit Tiledesk FN", event_data);
             setTimeout(() => {
                 document.getElementById("preloader").style.display = "none";
             }, 1000);
@@ -291,7 +291,7 @@
         if(urlToConsole){
             baseUrlConsole = urlToConsole;
         }
-        
+
 
 
         var currentUrl = window.location.href
@@ -299,7 +299,7 @@
             var fbShareUrl = "https://www.facebook.com/sharer.php?u=" + encodeURIComponent(currentUrl);
             window.open(
                 fbShareUrl,
-                '_blank' 
+                '_blank'
             );
         }
 
@@ -307,7 +307,7 @@
             var TwShareUrl = "https://twitter.com/share?url=" + encodeURIComponent(currentUrl);
             window.open(
                 TwShareUrl,
-                '_blank' 
+                '_blank'
             );
          }
 
@@ -315,24 +315,24 @@
             var LinkedinShareUrl = "https://www.linkedin.com/shareArticle?mini=true&url=" + encodeURIComponent(currentUrl);
             window.open(
                 LinkedinShareUrl,
-                '_blank' 
+                '_blank'
             );
          }
 
-         function shareOnTelegram() {                                    
+         function shareOnTelegram() {
             var TelegramShareUrl = "tg://msg_url?url=" + encodeURIComponent(currentUrl) ;
-            // console.log('TelegramShareUrl ', TelegramShareUrl ) 
+            // console.log('TelegramShareUrl ', TelegramShareUrl )
             window.open(
                 TelegramShareUrl,
-                '_blank' 
+                '_blank'
             );
          }
 
-         function shareOnWhatsapp() {            
+         function shareOnWhatsapp() {
             var WhatsappShareUrl = "whatsapp://send?text=" + currentUrl;
             window.open(
                 WhatsappShareUrl,
-                '_blank' 
+                '_blank'
             );
         }
 
@@ -344,7 +344,7 @@
             //var urlConsole = "dashboard/#/project/"+tiledesk_projectid+"/home";
             window.open(
                 urlConsole,
-                '_blank' 
+                '_blank'
             );
         }
 
@@ -352,10 +352,10 @@
             var urlTestPage = currentUrl.replace('index.html', 'index-dev.html')
             window.open(
                 urlTestPage,
-                '_blank' 
+                '_blank'
             );
         }
-                        
+
         var url = new URL(currentUrl);
         var tiledesk_projectid = url.searchParams.get("tiledesk_projectid");
         var project_name = url.searchParams.get("project_name");
@@ -383,10 +383,10 @@
         //         setTimeout(() => {
         //             document.getElementById("preloader").style.display = "none";
         //         }, 1000);
-                
+
         //     });
         // };
-        
+
         var isOpen = getQueryVariable("isOpen");
         //var tiledesk_projectid = url.searchParams.get("tiledesk_projectid");
 
@@ -394,7 +394,7 @@
         if(isOpen == 'true') {
             // console.log('QUI ENTRO isOpen >: ', isOpen);
             localStorage.setItem("tiledesk_widget_sv1_"+ tiledesk_projectid +"_isOpen", true);
-        } 
+        }
 
 
         function getQueryVariable(variable)     {
@@ -407,7 +407,7 @@
             return(false);
         }
     </script>
-    
+
 </head>
 
 <body class="website white" >
@@ -476,8 +476,8 @@
                                 &lt;script type=&quot;application/javascript&quot;&gt; <br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;window.tiledeskSettings = <br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;projectid: </span> 
-                                <span id="project_id"> </span> 
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;projectid: </span>
+                                <span id="project_id"> </span>
                                 <span style="border:none !important">
                                 <br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}; <br>
@@ -508,13 +508,13 @@
                         </div>
                         <div class="modal-body">
 
-                            <a onclick="shareOnFacebook()" style="cursor: pointer;text-decoration: none;">    
-                                
+                            <a onclick="shareOnFacebook()" style="cursor: pointer;text-decoration: none;">
+
                                 <img src="./tiledesk_widget_files/facebook.png" alt="Facebook">
                             </a>
 
                             <!-- Twitter -->
-                            <a onclick="shareOnTwitter()" style="cursor: pointer;text-decoration: none;">     
+                            <a onclick="shareOnTwitter()" style="cursor: pointer;text-decoration: none;">
                                 <img src="./tiledesk_widget_files/twitter.png" alt="Twitter">
                             </a>
 

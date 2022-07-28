@@ -38,6 +38,7 @@
             width: 100%;
             height: 100%;
             position: absolute;
+            text-align: center;
             .c21-header-button {
                 display: block;
                 width: 100%;
@@ -47,10 +48,10 @@
             }
             .c21-header-content {
                 position: relative;
-                margin: 30px 40px 0px 40px;
+                margin: 70px 16px 0px 16px;
                 width: auto;
                 height: auto;
-                
+
                 .c21-logo {
                     position: relative;
                     width: auto;
@@ -64,19 +65,20 @@
                     }
                 }
                 .c21-text {
-                    font-family: 'Google Sans';
+                    font-family: 'Avenir';
                     .c21-text-welcome {
                         overflow: hidden;
                         line-height: 1.2em;
                         max-height: 2.4em;
-                        font-weight: 400;
-                        font-size: 3.0em; 
+                        font-weight: 700;
+                        font-size: 2.4em;
                         margin-bottom: 10px;
+                        text-align: center;
                     }
                     .c21-text-intro {
                         display: inline-block;
-                        font-size: 1.4em;
-                        font-weight: 300;
+                        font-size: 1.6em;
+                        font-weight: 400;
                         line-height: 1.2em;
                         max-height: 2.4em;
                     }
@@ -100,16 +102,16 @@
         //     border-top-style: initial;
         //     border-left-style: initial;
         //     border-right-style: initial;
-            
+
         // }
     }
 
     /*********  c21-body **********/
     .c21-body {
         position: absolute;
-        width: 100%;
+        width: auto;
         height: calc(100% - 30px); //100%;
-        padding: 0px;
+        padding: 16px;
         margin: 0px;
         overflow: auto;
         background-color: #ffffff;
@@ -121,28 +123,26 @@
 
             .c21-body-content {
                 position: relative;
-                padding: 210px 10px 20px 10px;
+                padding: 165px 0 20px 0;
                 margin: 0;
                 &.nologo{
-                    padding: 160px 10px 20px 10px;
+                    padding-top: 150px;
                 }
                 .c21-cards {
                     .c21-card {
                         position: relative;
-                        margin-bottom: 20px;
+                        margin-bottom: 0;
                         background-color: #ffffff;
                         border-radius: 3px;
                         font-size: 1.4em;
                         line-height: 1.4;
                         color: $black;
                         overflow: hidden;
-                        -webkit-box-shadow: 0 4px 15px 0 $trasp-light-black, 0 1px 2px 0 $trasp-light-black;
-                        box-shadow: 0 4px 15px 0 $trasp-light-black, 0 1px 2px 0 $trasp-light-black;
                         z-index: 20;
                         text-align: left;
                     }
-                } 
-            } 
+                }
+            }
         // }
     }
 
@@ -155,11 +155,11 @@
         left: 0px;
         right: 0px;
         background-color: white;
-        box-shadow: 0 0px 10px 0px $trasp-light-gray;
         z-index: 20;
-        border-top: 1px solid $trasp-light-gray;
+        border-top: 0;
 
         .c21-powered-by {
+            display: none;
             height: 25px;
             text-align: center;
             padding: 0;
@@ -169,7 +169,7 @@
             top: 0;
             left: 60px;
             right: 60px;
-            
+
             a {
                 text-decoration: none;
                 cursor: pointer;
@@ -182,7 +182,7 @@
                 font-family: Mulish, sans-serif;
                 letter-spacing: -0.24px;
                 -webkit-font-smoothing: antialiased;
-    
+
                 span {
                     display: inline-block;
                     position: relative;
@@ -216,12 +216,12 @@
             }
         }
 
-    } 
+    }
 
-    
+
 
 }
-  
+
 
 
 /*********************************/
@@ -233,5 +233,5 @@
         .c21-header-button.close {
             display: flex;
         }
-    } 
+    }
 }

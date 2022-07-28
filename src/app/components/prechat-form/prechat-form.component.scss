@@ -58,8 +58,8 @@
                     padding: 0;
                     margin: 0;
                     line-height: 1.2em;
-                    color: #616161;
-                    font-size: 1.5em;
+                    color: #000000;
+                    font-size: 1.6em;
                     text-align: center;
                     word-wrap: break-word;
                 }
@@ -103,7 +103,7 @@
                         padding: 0;
                         width: 100%;
                         display: inline-flex;
-                        input, 
+                        input,
                         select {
                             width: 100%;
                             margin: 0;
@@ -142,7 +142,7 @@
                             background-color: #ffffff;
                             outline: none;
                         }
-                        
+
                         /* Remove input background colour for Chrome autocomplete */
                         input:-webkit-autofill,
                         input:-webkit-autofill:hover,
@@ -155,7 +155,7 @@
             }
         }
 
-    
+
         /** CSS CHECK BUTTON **/
         .privacy-field {
             display: block;
@@ -169,7 +169,7 @@
             -ms-user-select: none;
             user-select: none;
           }
-          
+
           /* Hide the browser's default checkbox */
           .privacy-field input {
             font-size: 22px;
@@ -182,7 +182,7 @@
             width: 18px;
 
           }
-          
+
           /* Create a custom checkbox */
             .checkmark {
                 position: absolute;
@@ -200,29 +200,29 @@
                 }
             }
 
-            
+
             /* On mouse-over, add a grey background color */
             .privacy-field:hover input ~ .checkmark {
                 background-color: #ccc;
             }
-            
+
             /* When the checkbox is checked, add a blue background */
             .privacy-field input:checked ~ .checkmark {
                 background-color: #2196F3;
             }
-            
+
             /* Create the checkmark/indicator (hidden when not checked) */
             .checkmark:after {
                 content: "";
                 position: absolute;
                 display: none;
             }
-            
+
             /* Show the checkmark when checked */
             .privacy-field input:checked ~ .checkmark:after {
                 display: block;
             }
-            
+
             /* Style the checkmark/indicator */
             .privacy-field .checkmark:after {
                 left: 5px;
@@ -235,7 +235,7 @@
                 -ms-transform: rotate(45deg);
                 transform: rotate(45deg);
             }
-            
+
             /** END CSS CHECK BUTTON **/
-        
+
 }

@@ -1,6 +1,6 @@
 
  /* SET SCROLLBAR */
-// ============= CSS c21-header ================= // 
+// ============= CSS c21-header ================= //
 .c21-header {
     position: fixed;
     left: 0px;
@@ -29,8 +29,8 @@
                 height: 42px;
                 padding: 0px;
                 margin: 5px 0px;
-                font-size: 1.6em;
-                font-weight: 500;
+                font-size: 2em;
+                font-weight: 700;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -83,7 +83,7 @@
     }
 }
 
-/* ==================== OPTION MENU CONTAINER ==================== */ 
+/* ==================== OPTION MENU CONTAINER ==================== */
 #c21-options-menu {
     width: auto;
     height: auto;
@@ -94,25 +94,29 @@
     z-index: 10;
     top: 40px;
     right: 15px;
-    border-radius: 6px;
-    font-size: 1.2em;
+    border-radius: 10px;
+    font-size: 1.4em;
     line-height: normal;
     overflow: hidden;
-    border: 1px solid #d7d7d7;
-    background-color: #ffffff;
+    border: 0 !important;
+    margin: 0;
+    background-color: #F6F7FB;
+    padding: 10px 15px;
     // padding: 10px 0px 10px 0px;
     .c21-header-button {
-        // padding: 6px 10px 6px 10px;
-        margin: 5px 5px;
-        padding: 5px 10px;
-        display: flex;
-        align-items: center;
-        color:#777777;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      color:#000000;
     }
     .c21-header-button:hover {
         background-color: whitesmoke;
         border-radius: 6px;;
         cursor: pointer;
+    }
+    .c21-header-button:not(:first-child) {
+      margin-top: 20px;
     }
     .label-menu-item{
         line-height: 20px;
@@ -120,5 +124,5 @@
         margin: 0 10px 0px 10px;
     }
 
-    
+
 }

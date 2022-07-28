@@ -32,13 +32,13 @@
             height: 42px;
             padding: 0px;
             margin: 5px 0px;
-            font-size: 1.6em;
-            font-weight: 500;
+            font-size: 2em;
+            font-weight: 700;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
-    
+
         .titleText {
             position: relative;
             font-size: 1em;
@@ -109,7 +109,7 @@
                 //     font-weight: 500;
                 //     white-space: nowrap;
                 //     overflow: hidden;
-                //     text-overflow: ellipsis;             
+                //     text-overflow: ellipsis;
                 // }
 
                 .c21-header-writing{
@@ -135,24 +135,24 @@
         display: inline;
     }
 
-    
+
     .c21-ball {
         position: relative;
-        border: 2px solid #ffffff;
-        width: 52px;
-        height: 52px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         margin: 0;
         display: inline-flex;
         align-items: center;
         text-align: center;
         margin-left: -10px;
+        background-color: #EFEFEF !important;
         .c21-ball-label {
-            color: #ffffff;
-            margin: auto;
-            font-size: 20px;
-            user-select: none;
-            font-weight: 500;
+          color: #000000;
+          margin: auto;
+          font-size: 30px;
+          user-select: none;
+          font-weight: 700;
         }
         .c21-avatar-image {
             position: absolute;
@@ -171,13 +171,14 @@
     .c21-body {
         position: relative;
         display: block;
-        width: 100%;
         height: calc( 100% - 52px );
         top: 0px;
         font-size: 1em;
         -webkit-box-shadow: none;
         box-shadow: none;
         overflow: auto;
+        margin-top: 10px;
+        padding: 12px 16px;
 
 
         .c21-item-conversation {
@@ -189,10 +190,10 @@
             cursor: pointer;
             -webkit-appearance: initial;
             border: none;
-            border-bottom: 1px solid $light-gray;
             background-color: #ffffff;
             text-align: left;
-            
+            border-radius: 10px;
+
             .c21-body-conv{
                 position: relative;
                 // border-top: 1px solid #eee;
@@ -204,7 +205,7 @@
                 align-items: center;
                 height: 80px;
                 text-align: left;
-  
+
                 .c21-left-conv {
                     width: auto;
                     height: 100%;
@@ -216,11 +217,11 @@
                         position: relative;
                         padding: 0;
                         margin: 0;
-                        height: 40px;
-                        width: 40px;
-                        min-height: 40px;
-                        min-width: 40px;
-                        line-height: 40px;
+                        height: 32px;
+                        width: 32px;
+                        min-height: 32px;
+                        min-width: 32px;
+                        line-height: 32px;
                         border-radius: 50%;
                         overflow: hidden;
                         background-color: #ffffff;
@@ -257,7 +258,7 @@
                     float: left;
                     padding: 17px 0;
                     .c21-last-time {
-                        font-size: 0.8em;
+                        font-size: 1.3em;
                         color: #aaaaaa;
                         float: right;
                         display: block;
@@ -267,34 +268,54 @@
                         height: auto;
                     }
                     .c21-name {
-                        font-weight: 700;
-                        color: #3a3c4c;
-                        font-size: 1.3em;
+                        font-weight: 800;
+                        color: #1B384F;
+                        font-size: 1.6em;
                         line-height: 1.7;
                         min-height: 20px;
                     }
                     .c21-msg {
-                        font-weight: 200;
-                        color: #3a3c4c;
-                        font-size: 1.3em;
+                        font-weight: 400;
+                        color: #6D7885;
+                        font-size: 1.5em;
                         line-height: 1.7;
                         max-height: 21px;
-                        
+
                     }
                     .not-read.c21-msg {
-                        font-weight: 500;
+                      color: #1B384F
                     }
                 }
             }
         }
-    
+
         .c21-item-conversation:hover,
         .c21-item-conversation:focus,
         .c21-item-conversation:active {
             // outline-width: 0px;
-            background-color: #fafafa;
+            background-color: #465AE9;
+
+            .c21-name {
+              color: #ffffff !important;
+            }
+
+            .c21-last-time {
+              color: #F6F7FB !important;
+            }
+
+            .c21-msg {
+              color: #F6F7FB !important;
+            }
+
+            .c21-msg.not-read {
+              color: #ffffff !important;
+            }
+
+            .c21-divBudge {
+              background-color: #ffffff !important;
+            }
         }
-        
+
     }
     .c21-footer {
         // width: calc(100% - 48px);
@@ -313,7 +334,7 @@
 
     .c21-divBudge {
         position: absolute;
-        top: 40px;
+        top: 47px;
         left: inherit;
         right: 0px;
         width: 10px;
@@ -322,7 +343,7 @@
         font-size: 1.2em;
         line-height: 10px;
         border-radius: 50%;
-        background-color: red;
+        background-color: #465AE9 !important;
         color: white;
         font-weight: bold;
         padding: 0px;
@@ -330,7 +351,7 @@
         margin-right: 0px;
         display: inline-block;
     }
-      
+
     .c21-lablel-close{
         border: 1px solid #e2e2e2;
         background-color: #ececec;
@@ -344,4 +365,3 @@
         font-weight: 500;
     }
 }
-  

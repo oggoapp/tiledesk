@@ -26,7 +26,7 @@ export class Globals {
   // obsGlobalsParameters =  new BehaviorSubject<any>(null);
   BASE_LOCATION = 'https://widget.tiledesk.com/v2';
   // POWERED_BY = '<a tabindex="-1" target="_blank" href="http://www.tiledesk.com/">Powered by <b>TileDesk</b></a>';
-  
+
   POWERED_BY ='<a tabindex="-1" target="_blank" href="http://www.tiledesk.com/"><span>POWERED BY</span> <img src="https://support-pre.tiledesk.com/dashboard/assets/img/logos/tiledesk-logo.svg"/></a>'
   DEFAULT_LOGO_CHAT = '/assets/images/tiledesk_logo_white_small.png';
   WIDGET_TITLE = 'Tiledesk';
@@ -147,7 +147,7 @@ export class Globals {
    isOpen: boolean;
    startFromHome: boolean;
    projectid: string;
-   preChatForm: boolean; 
+   preChatForm: boolean;
    align: string;
    calloutTimer: number;
    calloutTitle: string;
@@ -294,10 +294,10 @@ export class Globals {
     this.widgetTitle = '';
     /** Set the widget title label shown in the widget header. Value type : string.
     The default value is Tiledesk. */
-    this.dynamicWaitTimeReply = true;  
-    /** The user can decide whether or not to share the 
-     * average response time of his team (if 'dynamicWaitTimeReply' is 
-     * false the WAITING_TIME_NOT_FOUND will always be displayed) 
+    this.dynamicWaitTimeReply = true;
+    /** The user can decide whether or not to share the
+     * average response time of his team (if 'dynamicWaitTimeReply' is
+     * false the WAITING_TIME_NOT_FOUND will always be displayed)
      * is set to true for backward compatibility with old projects */
     this.hideHeaderCloseButton = false;
     /** Hide the close button in the widget header. Permitted values: true,
@@ -366,7 +366,7 @@ export class Globals {
     /** set the text color of bubble received message */
     this.fontSize = '1.4em'
     /** set the text size of bubble messages */
-    this.fontFamily = "'Roboto','Google Sans', Helvetica, Arial, sans-serif'"
+    this.fontFamily = "'Avenir', Helvetica, Arial, sans-serif'"
     /** set the text family of bubble messages */
     this.buttonFontSize = '15px'
     /** set the text size of attachment-buttons */
@@ -502,7 +502,7 @@ export class Globals {
     this.default_settings = {
       'tenant': this.tenant, 'recipientId': this.recipientId,
       'projectid': this.projectid, 'widgetTitle': this.widgetTitle,
-      'poweredBy': this.poweredBy, 'userEmail': this.userEmail, //'userId': this.userId, 
+      'poweredBy': this.poweredBy, 'userEmail': this.userEmail, //'userId': this.userId,
       'userFullname': this.userFullname, 'preChatForm': this.preChatForm, 'preChatFormJson': this.preChatFormJson,
       'isOpen': this.isOpen, 'channelType': this.channelType,
       'lang': this.lang, 'calloutTimer': this.calloutTimer, 'calloutStaus': this.calloutStaus,
@@ -516,12 +516,12 @@ export class Globals {
       'marginY': this.marginY, 'lancherWidth': this.launcherWidth, 'lancherHeight': this.launcherHeight,
       'baloonImage': this.baloonImage, 'baloonShape': this.baloonShape, 'isLogEnabled': this.isLogEnabled,
       'openExternalLinkButton': this.openExternalLinkButton, 'hideHeaderConversationOptionsMenu': this.hideHeaderConversationOptionsMenu,
-      'hideSettings': this.hideSettings,'filterByRequester': this.filterByRequester, 
+      'hideSettings': this.hideSettings,'filterByRequester': this.filterByRequester,
       'persistence': this.persistence,'showWaitTime': this.showWaitTime, 'showAvailableAgents': this.showAvailableAgents,
       'showLogoutOption': this.showLogoutOption, 'showAttachmentButton': this.showAttachmentButton,
       'showAllConversations': this.showAllConversations, 'jwt': this.jwt,
       'dynamicWaitTimeReply': this.dynamicWaitTimeReply, 'soundEnabled': this.soundEnabled, 'logLevel': this.logLevel,
-      'bubbleSentBackground' : this.bubbleSentBackground, 'bubbleSentTextColor': this.bubbleSentTextColor,   
+      'bubbleSentBackground' : this.bubbleSentBackground, 'bubbleSentTextColor': this.bubbleSentTextColor,
       'bubbleReceivedBackground': this.bubbleReceivedBackground, 'bubbleReceivedTextColor': this.bubbleReceivedTextColor,
       'fontSize': this.fontSize, 'fontFamily': this.fontFamily, 'buttonFontSize': this.buttonFontSize,
       'buttonBackgroundColor': this.buttonBackgroundColor, 'buttonTextColor': this.buttonTextColor,
